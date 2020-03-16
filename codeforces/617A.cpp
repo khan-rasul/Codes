@@ -1,6 +1,7 @@
 /*
-* I'm a Ghost 
-* Now you see me, now you don't 	
+* I'm a Ghost
+* Now you see me, now you don't
+* 	    ~wrt CF obviously~
 */
 #include<bits/stdc++.h>
 #define fast() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
@@ -16,5 +17,7 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll x;
+    cin>>x;
+    cout<<x/5 + (x % 5 == 0 ? 0 : 1) <<endl;
 }

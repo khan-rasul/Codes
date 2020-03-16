@@ -1,6 +1,5 @@
 /*
-* I'm a Ghost 
-* Now you see me, now you don't 	
+* Fingers Crossed
 */
 #include<bits/stdc++.h>
 #define fast() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
@@ -16,5 +15,19 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll n , m;
+    	cin>>n>>m;
+    	ll sum = 0;
+    	ll arr[n];
+    	for(ll i = 0 ; i < n ; i++ )
+    	{
+    		cin>>arr[i];
+    		sum += arr[i];
+    	}
+    	cout<< arr[0] + min(m - arr[0] , sum - arr[0])<<endl;
+    }
 }
