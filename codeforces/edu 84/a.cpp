@@ -16,5 +16,22 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll n , k;
+    	cin>>n>>k;
+    	if(n < k || (( n & 1) ^ (k & 1)))
+    	{
+    		cout<<"NO\n";
+    		continue;
+    	}
+    	if(n >= k * k)
+    	{
+    		cout<<"YES\n";
+    	}
+    	else
+    		cout<<"NO\n";
+    }
 }

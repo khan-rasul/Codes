@@ -16,5 +16,19 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n;
+    cin>>n;
+    ll m = 0 , o;
+    for(ll i = 0 ; i < n ; i++ )
+    {
+    	ll x;
+    	cin>>x;
+    	if(i == 0) o = x;
+    	else
+    		o = __gcd(o , x);
+    	m = max(m , x);
+    }
+    cerr<<o<<endl;
+    m /= o;
+    cout<<((m - n) & 1 ? "Alice" : "Bob") <<endl;
 }

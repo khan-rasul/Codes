@@ -16,5 +16,15 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n;
+    cin>>n;
+    ll m = 0 , sum = 0;
+    for(ll i = 0 ; i < n ; i++ )
+    {
+    	ll x;
+    	cin>>x;
+    	sum += x;
+    	m = max(x , m);
+    }
+    cout<<m *n - sum <<endl;
 }

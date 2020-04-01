@@ -13,8 +13,20 @@
 #define pb push_back
 #define endl "\n"
 using namespace std;
+ll solve(ll a , ll b)
+{
+	if(!b) return 0;
+	ll ans = a / b;
+    a = a % b;
+    if(a)
+    ans += (b / a) + solve(a , b % a);
+    return ans;
+}
 int main()
 {
     // fast();
-    
+    ll a , b;
+    cin>>a>>b;
+    cout<<solve(a , b)<<endl;
+
 }

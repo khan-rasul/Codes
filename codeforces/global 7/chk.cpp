@@ -16,5 +16,11 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n = 2;
+    while(n < inf)
+    {
+    	n = n * 10 + 7;
+    	if(n % 7 == 0)
+    		cout<<"hi";
+    }
 }

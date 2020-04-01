@@ -16,5 +16,19 @@ using namespace std;
 int main()
 {
     // fast();
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll n;
+    	cin>>n;
+    	vector<ll> foo(n);
+    	for(ll i = 0 ; i < n ; i++ )
+    		cin>>foo[i];
+    	sort(foo.rbegin() , foo.rend() );
+    	for(ll i = 0 ; i < n ; i++ )
+    		cout<<foo[i]<<" ";
+    	cout<<endl;
+    }
     
 }

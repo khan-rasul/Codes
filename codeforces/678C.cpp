@@ -16,5 +16,8 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n , a , b ,p , q;
+    cin>>n>>a>>b>>p>>q;
+    ll x = n / (a * b / __gcd(a , b));
+    cout<<(n / a - x) * p + (n / b - x) * q + max(p , q) * x ;
 }

@@ -16,5 +16,15 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n , h;
+    cin>>n>>h;
+    ll ans = 0;
+    for(ll i = 0 ; i < n ; i++ )
+    {
+    	ll x;
+    	cin>>x;
+    	ans++;
+    	if(x > h) ans++;
+    }
+    cout<<ans<<endl;
 }

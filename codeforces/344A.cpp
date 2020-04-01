@@ -16,5 +16,17 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n , ans = 0;
+    cin>>n;
+    string s , x = "#";
+    for(ll i = 0 ; i < n ; i++)
+    {
+    	cin>>s;
+    	if(s != x)
+    	{
+    		x = s;
+    		ans++;
+    	}
+    }
+    cout<<ans<<endl;
 }

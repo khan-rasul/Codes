@@ -16,5 +16,18 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll n;
+    cin>>n;
+    ll brr[n] , arr[n];
+    for(ll i = 0 ; i < n ; i++ )
+    cin>>brr[i];
+	arr[0] = brr[0];
+	ll m = brr[0];
+    for(ll i = 1 ; i < n ; i++ )  
+    {
+    	m = max(m , arr[i - 1]);
+    	arr[i] = brr[i] + m;
+    }  
+    for(ll i = 0 ; i < n ; i++ )
+    	cout<<arr[i]<<" ";
 }

@@ -16,5 +16,18 @@ using namespace std;
 int main()
 {
     // fast();
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll n , m;
+    	cin>>n>>m;
+    	if(n % m == 0)
+    	{
+    		cout<<"YES\n";
+    	}
+    	else
+    		cout<<"NO\n";
+    }
     
 }

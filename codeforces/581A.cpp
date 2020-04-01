@@ -16,5 +16,7 @@ using namespace std;
 int main()
 {
     // fast();
-    
+    ll r , b;
+    cin>>r>>b;
+    cout<<min(r , b)<<" "<<abs(r - b ) / 2<<endl;
 }
