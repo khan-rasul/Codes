@@ -16,5 +16,12 @@ using namespace std;
 int main()
 {
 	// fast();
-    
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll n;
+    	cin>>n;
+    	cout<<n / 2 - ( n % 2 == 0)<<endl;
+    }
 }

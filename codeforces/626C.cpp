@@ -15,6 +15,16 @@
 using namespace std;
 int main()
 {
-	// fast();
-    
+    // fast();
+    ll n , m;
+    cin>>n>>m;
+    ll limit = (n + m) * 3;
+    for(ll i = 2 ; i <= limit ; i++ )
+    {
+    	if(i / 2 >= n && i / 3 >= m && (i / 2 + i / 3 - i / 6) >= (n + m))
+    	{
+    		cout<<i<<endl;
+    		return 0;
+    	}
+    }
 }

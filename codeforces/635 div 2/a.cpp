@@ -16,5 +16,12 @@ using namespace std;
 int main()
 {
 	// fast();
-    
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll a , b , c , d;
+    	cin>>a>>b>>c>>d;
+    	cout<<b<<" "<<c<<" "<<c<<endl;
+    }
 }

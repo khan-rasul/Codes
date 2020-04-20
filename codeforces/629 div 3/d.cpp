@@ -23,26 +23,59 @@ int main()
     	ll n ;
     	cin>>n;
     	ll arr[n];
+        set<ll> foo;
     	for(ll i = 0 ; i < n ; i++ )
     	{
     		cin>>arr[i];
+            foo.insert(arr[i]);
     	}
-    	ll brr[n];
-    	brr[0] = 1;
-    	if(arr[0] != arr[n - 1]) brr[n - 1] = 2;
-    	else brr[n - 1] = 1;
-    	ll l = 1 , r = n - 2;
-    	while(l < r)
-    	{
-    		if(arr[l] != arr[l - 1])
-    		{
-    			brr[l] =  
-    		}
-    	}
-    	cout<<*max_element(brr , brr + n)<<endl;
-    	for(ll i = 0 ; i < n ; i++ )
-    		cout<<brr[i]<<" ";
-    	cout<<endl;
-
+        if(foo.size() == 1)
+        {
+            cout<<1<<endl;
+            for(ll i = 0 ; i < n ; i++ )
+                cout<<1<<" ";
+            cout<<endl;
+            continue;
+        }
+        if(n % 2 == 0)
+        {
+            ll p = 0;
+            cout<<2<<endl;
+            for(ll i = 0 ; i < n ; i++)
+            {
+                cout<<p + 1<<" ";
+                p = 1 - p;
+            }
+            cout<<endl;
+            continue;
+        }
+        ll m = -1;
+        if(arr[0] == arr[n - 1]) m = 0;
+        else
+    	for(ll i = 1 ; i < n ; i++ )
+        {
+            if(arr[i] == arr[i - 1])
+            {
+                m = i;
+                break;
+            }
+        }
+    	if(m != -1)
+        {
+            ll p = 0;
+            cout<<2<<endl;
+            for(ll i = 0 ; i < n ; i++)
+            {
+                if(i == m) p = 1 - p;
+                cout<<p + 1<<" ";
+                p = 1 - p;
+            }
+            cout<<endl;
+            continue;
+        }
+        cout<<3<<endl;
+        for(ll i = 0 ; i < n - 1 ; i+=2 )
+            cout<<"1 2 ";
+        cout<<3<<endl;
     }
 }

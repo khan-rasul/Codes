@@ -13,8 +13,25 @@
 #define pb push_back
 #define endl "\n"
 using namespace std;
+ll n;
+vector<vector<ll> adj; 
+ll ma , mi;
+ll dfs(ll u , ll p = -1)
+{
+	
+}
 int main()
 {
 	// fast();
+    cin>>n;
+    adj.resize(n + 1);
+    for(ll i = 1 ; i < n ; i++ )
+    {
+    	ll x , y;
+    	cin>>x>>y;
+    	adj[x].pb(y);
+    	adj[y].pb(x);
+    }
+    ma = n - 1; mi = 0;
     
 }

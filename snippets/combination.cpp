@@ -1,3 +1,4 @@
+const ll MAX = 1000000;
 ll power(ll a, ll b, ll m)
 {
 	if(b == 0) return 1;
@@ -9,7 +10,7 @@ ll power(ll a, ll b, ll m)
 		temp = (a * temp) % m;
 	return temp;
 } 
-ll factorial[1000000];
+ll factorial[MAX];
 ll fact(ll n)
 {
 	if(n < 1)
@@ -17,14 +18,7 @@ ll fact(ll n)
 	if(factorial[n] != 0) return factorial[n];
 	return factorial[n] = fact(n - 1) * n % mod;
 }
-ll inverse[1000000];
-ll inv(ll n)
-{
-	if(inverse[n] != -1) return inverse[n];
-	return inverse[n] = power(n , mod - 2 , mod);
-}
-
 ll comb(ll n , ll r)
 {
-	return (fact(n) * inv(fact(n - r)) % mod) * inv(fact(r)) % mod;
+	return (fact(n) * power(fact(n - r) , mod - 2 , mod) % mod) * power(fact(r) , mod - 2 , mod) % mod;
 }

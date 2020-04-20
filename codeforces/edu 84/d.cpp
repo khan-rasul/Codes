@@ -13,6 +13,34 @@
 #define pb push_back
 #define endl "\n"
 using namespace std;
+vector<ll> c , p;
+ll chk(vector<ll> cycle , ll x)
+{
+    ll n = cycle.size();
+    ll res = inf;
+    for(ll i = 1 ; i <= x ; i++ )
+    {
+        ll col = -1 , flag = 1;
+        for(ll j = i ; j < n ; j += x)
+        {
+            if(col == -1)
+            {
+                col = c[cycle[j]];
+            }
+            else if(col != c[cycle[j]])
+            {
+                flag = 0;
+                break;
+            }
+        }
+        if(flag)
+        {
+            res = x;
+            break;
+        }
+    }
+    return res;
+}
 int main()
 {
     // fast();
@@ -22,29 +50,44 @@ int main()
     {
     	ll n;
     	cin>>n;
-    	ll p[n + 1] , c [n + 1];
+    	c.resize(n + 1);
+        p.resize(n + 1);
     	for(ll i = 0 ; i < n ; i++ )
     		cin>>p[i + 1];
     	for(ll i = 0 ; i < n ; i++ )
     		cin>>c[i + 1];
-    	ll vis[n + 1] = {0} , v = 1;;
+    	ll vis[n + 1] = {0} ;
+        vector<vector<ll> > cycles;
     	for(ll i = 1 ; i <= n ; i++ )
     	{
-    		// cerr<<i<<" ";
     		if(vis[i] == 0)
     		{
+                vector<ll> cycle;
+                cycle.pb(0);
     			ll k = i ;
-    			while(vis[k] == 0 && k != p[k])
+                cycle.pb(k);
+    			while(i != p[k])
     			{
-    				vis[k] = v;
-    				k = p[k];
+    				vis[k] = 1;
+                    k = p[k];
+    				cycle.pb(k);
     			}
-    			if(vis[k])
-    			v++;
+                vis[k] = 1;
+                cycles.pb(cycle);
     		}
     	}
-    	for(ll i = 0 ; i < n ; i++)
-    		cerr<<vis[i + 1]<<" ";
-    	cerr<<endl;
+        ll ans = inf;
+    	for(vector<ll> cycle : cycles)
+        {
+            ll x = cycle.size() - 1;
+            for(ll i = 1 ; i * i <= x ; i++ )
+            {
+                if(x % i == 0)
+                {
+                    ans = min(ans , min(chk(cycle , i) , chk(cycle , x / i)));
+                }
+            }
+        }
+        cout<<ans<<endl;
     }
 }

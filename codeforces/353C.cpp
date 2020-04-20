@@ -15,6 +15,23 @@
 using namespace std;
 int main()
 {
-	// fast();
-    
+    fast();
+    ll n;
+    cin>>n;
+    ll arr[n];
+    for(ll i = 0 ; i < n ; i++ )
+    	cin>>arr[i];
+    string s;
+    cin>>s;
+    ll b = 0;
+    ll ans = 0;
+    for(ll i = 0 ; i < n ; i++ )
+    {
+    	if(s[i] == '1')
+    	{
+    		ans = max(ans + arr[i] , b);
+    	}
+		b += arr[i];  
+    }
+    cout<<ans<<endl;
 }

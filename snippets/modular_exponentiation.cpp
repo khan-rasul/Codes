@@ -1,3 +1,4 @@
+// Modular Exponentiation template
 ll power(ll a, ll b, ll m)
 {
 	if(a == 0) return 0;
@@ -9,3 +10,4 @@ ll power(ll a, ll b, ll m)
 		temp = (a * temp) % m;
 	return temp;
 } 
+// end of template

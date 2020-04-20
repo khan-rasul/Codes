@@ -16,5 +16,16 @@ using namespace std;
 int main()
 {
 	// fast();
-    
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+    	ll n , a,  b;
+    	cin>>n>>a>>b;
+    	for(ll i = 0 ; i < n ; i++ )
+    	{
+    		cout<<(char)('a' + i % b);
+    	}
+    	cout<<endl;
+    }
 }
